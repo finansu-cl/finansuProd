@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{748B6292-7835-46AB-901D-354F6DEC16B7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sifaco</RootNamespace>
+    <AssemblyName>sifaco</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX, Version=1.0.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencias\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Autorizacion\Autorizadas.aspx" />
+    <Content Include="Autorizacion\Vencidas.aspx" />
+    <Content Include="Autorizacion\Rechazadas.aspx" />
+    <Content Include="BuscadorCobranza\Simulacion.aspx" />
+    <Content Include="BuscadorCobranza\Prestamo.aspx" />
+    <Content Include="CobranzaFacturas\DetalleFactura.aspx" />
+    <Content Include="CobranzaFacturas\Default.aspx" />
+    <Content Include="CobranzaPrestamos\Default.aspx" />
+    <Content Include="Cobranza\Default.aspx" />
+    <Content Include="Controls\BotonesForm.ascx" />
+    <Content Include="Controls\Contrato.ascx" />
+    <Content Include="Controls\DatosGarantiaHipotecario.ascx" />
+    <Content Include="Controls\ModalMH.ascx" />
+    <Content Include="Controls\ModalMI.ascx" />
+    <Content Include="Controls\DatosPrendaVehiculo.ascx" />
+    <Content Include="Controls\DatosGarantiaVehiculo.ascx" />
+    <Content Include="Controls\ModalCP.ascx" />
+    <Content Include="Controls\ModalSD.ascx" />
+    <Content Include="Controls\DireccionPrestamo.ascx" />
+    <Content Include="Controls\Prestamos_Persona.ascx" />
+    <Content Include="Controls\Usuarios.ascx" />
+    <Content Include="Controls\DocumentsPresToPrint.ascx" />
+    <Content Include="Controls\DatosPrestamo.ascx" />
+    <Content Include="Controls\DatosAval.ascx" />
+    <Content Include="Controls\DatosFactura.ascx" />
+    <Content Include="Controls\DocumentsToPrint.ascx" />
+    <Content Include="Controls\Representantes.ascx" />
+    <Content Include="Controls\DatosBanco.ascx" />
+    <Content Include="Controls\Direccion.ascx" />
+    <Content Include="Controls\Empresas.ascx" />
+    <Content Include="Controls\HeadHome.ascx" />
+    <Content Include="Controls\Personas.ascx" />
+    <Content Include="Controls\Simulacion.ascx" />
+    <Content Include="BuscadorCobranza\Default.aspx" />
+    <Content Include="Autorizacion\Default.aspx" />
+    <Content Include="Contratos\Default.aspx" />
+    <Content Include="Error\Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Liquidaciones\Default.aspx" />
+    <Content Include="FacturasVencer\ClientesPendiente.aspx" />
+    <Content Include="PrestamosVencer\Vencidas.aspx" />
+    <Content Include="Prestamo\Reorganizado.aspx" />
+    <Content Include="Prestamo\Reorganizados.aspx" />
+    <Content Include="Prestamo\Especial.aspx" />
+    <Content Include="Scripts\boostrap-responsive\responsive.bootstrap.min.css" />
+    <Content Include="Scripts\boostrap-responsive\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap.css" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\images\filler.png" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\datatables\extensions\AutoFill\Readme.txt" />
+    <Content Include="Scripts\datatables\extensions\buttons.dataTables.min.css" />
+    <Content Include="Scripts\datatables\extensions\buttons.html5.min.js" />
+    <Content Include="Scripts\datatables\extensions\buttons.print.min.js" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\images\insert.png" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\License.txt" />
+    <Content Include="Scripts\datatables\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Scripts\datatables\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Scripts\datatables\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\restore.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\text.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Scripts\datatables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Scripts\datatables\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Scripts\datatables\extensions\ColVis\License.txt" />
+    <Content Include="Scripts\datatables\extensions\dataTables.buttons.min.js" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\License.txt" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\datatables\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Scripts\datatables\extensions\JsZip\jszip.min.js" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\examples\events.html" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\examples\html.html" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\datatables\extensions\KeyTable\Readme.txt" />
+    <Content Include="Scripts\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Scripts\datatables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Scripts\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Scripts\datatables\extensions\Responsive\License.txt" />
+    <Content Include="Scripts\datatables\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Scripts\datatables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Scripts\datatables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Scripts\datatables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Scripts\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\datatables\extensions\Scroller\Readme.txt" />
+    <Content Include="Scripts\datatables\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Scripts\datatables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\collection.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\index.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\simple.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\collection.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\copy.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\csv.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\pdf.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\print.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\xls.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Scripts\datatables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Scripts\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Scripts\datatables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Scripts\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\datatables\images\sort_asc.png" />
+    <Content Include="Scripts\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\datatables\images\sort_both.png" />
+    <Content Include="Scripts\datatables\images\sort_desc.png" />
+    <Content Include="Scripts\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\datatables\jquery.dataTables.css" />
+    <Content Include="Scripts\datatables\jquery.dataTables.js" />
+    <Content Include="Scripts\datatables\jquery.dataTables.min.css" />
+    <Content Include="Scripts\datatables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\datatables\jquery.dataTables_themeroller.css" />
+    <Content Include="Styles\img\facebok.svg" />
+    <Content Include="Styles\img\ico isntagram_02.svg" />
+    <Content Include="Styles\img\ico linkedin.svg" />
+    <Content Include="Styles\img\ico linkedin02.svg" />
+    <Content Include="Styles\img\ico_facebook.svg" />
+    <Content Include="Styles\img\ico_instagram.svg" />
+    <Content Include="Styles\img\img_bkg.jpg" />
+    <Content Include="Styles\img\img_log.jpg" />
+    <Content Include="Styles\img\img_log.png" />
+    <Content Include="Styles\img\img_log2.jpg" />
+    <Content Include="Styles\img\logoLogin.png" />
+    <Content Include="Styles\img\notaFinansu.png" />
+    <Content Include="Styles\img\Sigesov.svg" />
+    <Content Include="Styles\img\sigesov_top.png" />
+    <Content Include="Styles\img\smallLogo.png" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Usuarios\Default.aspx" />
+    <Content Include="PrestamosVencer\ClientesMora.aspx" />
+    <Content Include="PrestamosVencer\Default.aspx" />
+    <Content Include="Prestamos\Default.aspx" />
+    <Content Include="Prestamo\Default.aspx" />
+    <Content Include="Dependencias\DocX.dll" />
+    <Content Include="Dependencias\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="Factoring\Default.aspx" />
+    <Content Include="FacturasVencer\ClientesMora.aspx" />
+    <Content Include="FacturasVencer\Default.aspx" />
+    <Content Include="Representantes\Default.aspx" />
+    <Content Include="Empresas\Default.aspx" />
+    <Content Include="Home\Default.aspx" />
+    <Content Include="Personas\Default.aspx" />
+    <Content Include="Scripts\app.min.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\dashboard.js" />
+    <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\icheck.min.js" />
+    <Content Include="Scripts\jQuery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.inputmask.date.extensions.js" />
+    <Content Include="Scripts\jquery.inputmask.js" />
+    <Content Include="Scripts\jquery.PrintArea.js_4.js" />
+    <Content Include="Scripts\jquery.Rut.min.js" />
+    <Content Include="Scripts\lostFocus.js" />
+    <Content Include="Scripts\raphael-min.js" />
+    <Content Include="Scripts\validaciones.js" />
+    <Content Include="Simulacion\Default.aspx" />
+    <Content Include="Styles\AdminLTE.min.css" />
+    <Content Include="Styles\blue.css" />
+    <Content Include="Styles\blue.png" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\dataTables.bootstrap.css" />
+    <Content Include="Styles\font-awesome.min.css" />
+    <Content Include="Styles\img\img-default.png" />
+    <Content Include="Styles\img\img-user.jpg" />
+    <Content Include="Styles\img\img-user2.jpg" />
+    <Content Include="Styles\img\logo_fnnsu.png" />
+    <Content Include="Styles\img\user2-160x160.jpg" />
+    <Content Include="Styles\img\user3-128x128.jpg" />
+    <Content Include="Styles\img\user4-128x128.jpg" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\morris.css" />
+    <Content Include="Scripts\morris.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Styles\_all-skins.min.css" />
+    <Content Include="ToPrint\Default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autorizacion\Autorizadas.aspx.cs">
+      <DependentUpon>Autorizadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autorizacion\Autorizadas.aspx.designer.cs">
+      <DependentUpon>Autorizadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autorizacion\Vencidas.aspx.cs">
+      <DependentUpon>Vencidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autorizacion\Vencidas.aspx.designer.cs">
+      <DependentUpon>Vencidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autorizacion\Rechazadas.aspx.cs">
+      <DependentUpon>Rechazadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autorizacion\Rechazadas.aspx.designer.cs">
+      <DependentUpon>Rechazadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Simulacion.aspx.cs">
+      <DependentUpon>Simulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Simulacion.aspx.designer.cs">
+      <DependentUpon>Simulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Prestamo.aspx.cs">
+      <DependentUpon>Prestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Prestamo.aspx.designer.cs">
+      <DependentUpon>Prestamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CobranzaFacturas\DetalleFactura.aspx.cs">
+      <DependentUpon>DetalleFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CobranzaFacturas\DetalleFactura.aspx.designer.cs">
+      <DependentUpon>DetalleFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CobranzaFacturas\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CobranzaFacturas\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CobranzaPrestamos\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CobranzaPrestamos\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobranza\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobranza\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BotonesForm.ascx.cs">
+      <DependentUpon>BotonesForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BotonesForm.ascx.designer.cs">
+      <DependentUpon>BotonesForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Contrato.ascx.cs">
+      <DependentUpon>Contrato.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Contrato.ascx.designer.cs">
+      <DependentUpon>Contrato.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosGarantiaHipotecario.ascx.cs">
+      <DependentUpon>DatosGarantiaHipotecario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosGarantiaHipotecario.ascx.designer.cs">
+      <DependentUpon>DatosGarantiaHipotecario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalMH.ascx.cs">
+      <DependentUpon>ModalMH.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ModalMH.ascx.designer.cs">
+      <DependentUpon>ModalMH.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalMI.ascx.cs">
+      <DependentUpon>ModalMI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ModalMI.ascx.designer.cs">
+      <DependentUpon>ModalMI.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosPrendaVehiculo.ascx.cs">
+      <DependentUpon>DatosPrendaVehiculo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosPrendaVehiculo.ascx.designer.cs">
+      <DependentUpon>DatosPrendaVehiculo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosGarantiaVehiculo.ascx.cs">
+      <DependentUpon>DatosGarantiaVehiculo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosGarantiaVehiculo.ascx.designer.cs">
+      <DependentUpon>DatosGarantiaVehiculo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalCP.ascx.cs">
+      <DependentUpon>ModalCP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ModalCP.ascx.designer.cs">
+      <DependentUpon>ModalCP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalSD.ascx.cs">
+      <DependentUpon>ModalSD.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ModalSD.ascx.designer.cs">
+      <DependentUpon>ModalSD.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DireccionPrestamo.ascx.cs">
+      <DependentUpon>DireccionPrestamo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DireccionPrestamo.ascx.designer.cs">
+      <DependentUpon>DireccionPrestamo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Prestamos_Persona.ascx.cs">
+      <DependentUpon>Prestamos_Persona.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Prestamos_Persona.ascx.designer.cs">
+      <DependentUpon>Prestamos_Persona.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Usuarios.ascx.cs">
+      <DependentUpon>Usuarios.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Usuarios.ascx.designer.cs">
+      <DependentUpon>Usuarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DocumentsPresToPrint.ascx.cs">
+      <DependentUpon>DocumentsPresToPrint.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DocumentsPresToPrint.ascx.designer.cs">
+      <DependentUpon>DocumentsPresToPrint.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosPrestamo.ascx.cs">
+      <DependentUpon>DatosPrestamo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosPrestamo.ascx.designer.cs">
+      <DependentUpon>DatosPrestamo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosAval.ascx.cs">
+      <DependentUpon>DatosAval.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosAval.ascx.designer.cs">
+      <DependentUpon>DatosAval.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosFactura.ascx.cs">
+      <DependentUpon>DatosFactura.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosFactura.ascx.designer.cs">
+      <DependentUpon>DatosFactura.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DocumentsToPrint.ascx.cs">
+      <DependentUpon>DocumentsToPrint.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DocumentsToPrint.ascx.designer.cs">
+      <DependentUpon>DocumentsToPrint.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Representantes.ascx.cs">
+      <DependentUpon>Representantes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Representantes.ascx.designer.cs">
+      <DependentUpon>Representantes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatosBanco.ascx.cs">
+      <DependentUpon>DatosBanco.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatosBanco.ascx.designer.cs">
+      <DependentUpon>DatosBanco.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Direccion.ascx.cs">
+      <DependentUpon>Direccion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Direccion.ascx.designer.cs">
+      <DependentUpon>Direccion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Empresas.ascx.cs">
+      <DependentUpon>Empresas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Empresas.ascx.designer.cs">
+      <DependentUpon>Empresas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeadHome.ascx.cs">
+      <DependentUpon>HeadHome.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\HeadHome.ascx.designer.cs">
+      <DependentUpon>HeadHome.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Personas.ascx.cs">
+      <DependentUpon>Personas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Personas.ascx.designer.cs">
+      <DependentUpon>Personas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Simulacion.ascx.cs">
+      <DependentUpon>Simulacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Simulacion.ascx.designer.cs">
+      <DependentUpon>Simulacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuscadorCobranza\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autorizacion\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autorizacion\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contratos\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contratos\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasVencer\ClientesPendiente.aspx.cs">
+      <DependentUpon>ClientesPendiente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacturasVencer\ClientesPendiente.aspx.designer.cs">
+      <DependentUpon>ClientesPendiente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosVencer\Vencidas.aspx.cs">
+      <DependentUpon>Vencidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrestamosVencer\Vencidas.aspx.designer.cs">
+      <DependentUpon>Vencidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\Reorganizado.aspx.cs">
+      <DependentUpon>Reorganizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestamo\Reorganizado.aspx.designer.cs">
+      <DependentUpon>Reorganizado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\Reorganizados.aspx.cs">
+      <DependentUpon>Reorganizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestamo\Reorganizados.aspx.designer.cs">
+      <DependentUpon>Reorganizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\Especial.aspx.cs">
+      <DependentUpon>Especial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestamo\Especial.aspx.designer.cs">
+      <DependentUpon>Especial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosVencer\ClientesMora.aspx.cs">
+      <DependentUpon>ClientesMora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrestamosVencer\ClientesMora.aspx.designer.cs">
+      <DependentUpon>ClientesMora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosVencer\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrestamosVencer\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestamos\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamo\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestamo\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factoring\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factoring\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasVencer\ClientesMora.aspx.cs">
+      <DependentUpon>ClientesMora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacturasVencer\ClientesMora.aspx.designer.cs">
+      <DependentUpon>ClientesMora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasVencer\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacturasVencer\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\DownloadFile.ashx.cs">
+      <DependentUpon>DownloadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Representantes\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Representantes\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personas\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Simulacion\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simulacion\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ToPrint\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToPrint\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Downloads\" />
+    <Folder Include="Log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Downloads\CARTA_GUIA.docx" />
+    <Content Include="App_Data\Files\registro_diario.xls" />
+    <Content Include="App_Data\Template\AVALISTA %2856%29.docx" />
+    <Content Include="App_Data\Template\AVALISTA %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\AVALISTA %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\AVALISTA prueba.docx" />
+    <Content Include="App_Data\Template\AVALISTA.docx" />
+    <Content Include="App_Data\Template\AVALISTA_P.docx" />
+    <Content Include="App_Data\Template\CANCELACION Y ALZAMIENTO DE PRENDA Y PROHIBICION.docx" />
+    <Content Include="App_Data\Template\CARTA GUIA %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\CARTA_GUIA.docx" />
+    <Content Include="App_Data\Template\CARTA_NOTARIA.docx" />
+    <Content Include="App_Data\Template\CESION %28EMPRESA 2 REP.%29.docx" />
+    <Content Include="App_Data\Template\CESION %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\CESION %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\CESION PRUEBA.docx" />
+    <Content Include="App_Data\Template\CESION_100.docx" />
+    <Content Include="App_Data\Template\CESION_95.docx" />
+    <Content Include="App_Data\Template\CESION_P_100.docx" />
+    <Content Include="App_Data\Template\CESION_P_95.docx" />
+    <Content Include="App_Data\Template\CONSTITUCION DE PRENDA SIN DESPLAZAMIENTO Y PROHIBICION %28subir%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO DE MUTUO HIPOTECARIO.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO MOZÓ %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO MOZÓ %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO Persona Juridica.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO SANTELICES  %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO MARCO SANTELICES %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\CONTRATO_MARCO.docx" />
+    <Content Include="App_Data\Template\CONTRATO_MARCO_P.docx" />
+    <Content Include="App_Data\Template\DATOS TRANSFERENCIAS %28EMPRESA%29 %2873%29.docx" />
+    <Content Include="App_Data\Template\DATOS TRANSFERENCIAS %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\DATOS TRANSFERENCIAS %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\DATOS_TRANSFERENCIAS.docx" />
+    <Content Include="App_Data\Template\DDC %28FORMULARIO CON DATOS%29}.docx" />
+    <Content Include="App_Data\Template\EJEMPLO3.docx" />
+    <Content Include="App_Data\Template\Leyenda Contratos Factoring.docx" />
+    <Content Include="App_Data\Template\leyenda.docx" />
+    <Content Include="App_Data\Template\MANDATO %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\MANDATO %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\MANDATO ESPECIAL %282%29.docx" />
+    <Content Include="App_Data\Template\MANDATO ESPECIAL CORREO %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\MANDATO ESPECIAL CORREO %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\MANDATO ESPECIAL PLURAL %282%29.docx" />
+    <Content Include="App_Data\Template\MANDATO ESPECIAL SINGULAR %282%29.docx" />
+    <Content Include="App_Data\Template\MANDATO.docx" />
+    <Content Include="App_Data\Template\MANDATO_P.docx" />
+    <Content Include="App_Data\Template\MUTUO HIPOTECARIO %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\MUTUO_HIPOTECARIO.docx" />
+    <Content Include="App_Data\Template\MUTUO_HIPOTECARIO_PN.docx" />
+    <Content Include="App_Data\Template\PAGARE.docx" />
+    <Content Include="App_Data\Template\PAGARE_old.docx" />
+    <Content Include="App_Data\Template\PODER %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\PODER %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\PODER.docx" />
+    <Content Include="App_Data\Template\PODER_P.docx" />
+    <Content Include="App_Data\Template\PRENDA_DESPLAZAMIENTO MODIFICADO.docx" />
+    <Content Include="App_Data\Template\PRENDA_DESPLAZAMIENTO.doc" />
+    <Content Include="App_Data\Template\PRENDA_DESPLAZAMIENTO.docx" />
+    <Content Include="App_Data\Template\pruebaJE.docx" />
+    <Content Include="App_Data\Template\PruebasPrestamo.docx" />
+    <Content Include="App_Data\Template\TABLA.docx" />
+    <Content Include="App_Data\Template\UAF %288%29.docx" />
+    <Content Include="App_Data\Template\UAF DDC %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\UAF DDC %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\UAF PEP %28EMPRESA 2 REP.%29.docx" />
+    <Content Include="App_Data\Template\UAF PEP %28EMPRESA%29.docx" />
+    <Content Include="App_Data\Template\UAF PEP %28PERSONA%29.docx" />
+    <Content Include="App_Data\Template\UAF.docx" />
+    <Content Include="App_Data\Template\UAF_P %2836%29.docx" />
+    <Content Include="App_Data\Template\UAF_P %2842%29.docx" />
+    <Content Include="App_Data\Template\UAF_P.docx" />
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Handler\DownloadFile.ashx" />
+    <None Include="Properties\PublishProfiles\finansu1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\finansu4 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\datatables\extensions\ColReorder\Readme.md" />
+    <Content Include="Scripts\datatables\extensions\ColVis\Readme.md" />
+    <Content Include="Scripts\datatables\extensions\FixedColumns\Readme.md" />
+    <Content Include="Scripts\datatables\extensions\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="Scripts\datatables\extensions\Responsive\Readme.md" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Scripts\datatables\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Scripts\datatables\extensions\TableTools\Readme.md" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Template\AVALISTA %2856%29.docx" />
+    <Content Include="Template\AVALISTA %28EMPRESA%29.docx" />
+    <Content Include="Template\AVALISTA %28PERSONA%29.docx" />
+    <Content Include="Template\AVALISTA prueba.docx" />
+    <None Include="Template\AVALISTA.docx" />
+    <None Include="Template\AVALISTA_P.docx" />
+    <Content Include="Template\CANCELACION Y ALZAMIENTO DE PRENDA Y PROHIBICION.docx" />
+    <Content Include="Template\CARTA GUIA %28PERSONA%29.docx" />
+    <None Include="Template\CARTA_GUIA.docx" />
+    <Content Include="Template\CARTA_NOTARIA.docx" />
+    <Content Include="Template\CESION %28EMPRESA 2 REP.%29.docx" />
+    <Content Include="Template\CESION %28EMPRESA%29.docx" />
+    <Content Include="Template\CESION %28PERSONA%29.docx" />
+    <Content Include="Template\CESION PRUEBA.docx" />
+    <None Include="Template\CESION_100.docx" />
+    <None Include="Template\CESION_95.docx" />
+    <None Include="Template\CESION_P_100.docx" />
+    <None Include="Template\CESION_P_95.docx" />
+    <Content Include="Template\CONSTITUCION DE PRENDA SIN DESPLAZAMIENTO Y PROHIBICION %28subir%29.docx" />
+    <Content Include="Template\CONTRATO DE MUTUO HIPOTECARIO.docx" />
+    <Content Include="Template\CONTRATO MARCO %28EMPRESA%29.docx" />
+    <Content Include="Template\CONTRATO MARCO MOZÓ %28EMPRESA%29.docx" />
+    <Content Include="Template\CONTRATO MARCO MOZÓ %28PERSONA%29.docx" />
+    <Content Include="Template\CONTRATO MARCO Persona Juridica.docx" />
+    <Content Include="Template\CONTRATO MARCO SANTELICES  %28EMPRESA%29.docx" />
+    <Content Include="Template\CONTRATO MARCO SANTELICES %28PERSONA%29.docx" />
+    <None Include="Template\CONTRATO_MARCO.docx" />
+    <None Include="Template\CONTRATO_MARCO_P.docx" />
+    <Content Include="Template\DATOS TRANSFERENCIAS %28EMPRESA%29 %2873%29.docx" />
+    <Content Include="Template\DATOS TRANSFERENCIAS %28EMPRESA%29.docx" />
+    <Content Include="Template\DATOS TRANSFERENCIAS %28PERSONA%29.docx" />
+    <Content Include="Template\DATOS_TRANSFERENCIAS.docx" />
+    <Content Include="Template\DDC %28FORMULARIO CON DATOS%29}.docx" />
+    <Content Include="Template\EJEMPLO3.docx" />
+    <Content Include="Template\Leyenda Contratos Factoring.docx" />
+    <Content Include="Template\leyenda.docx" />
+    <Content Include="Template\MANDATO %28EMPRESA%29.docx" />
+    <Content Include="Template\MANDATO %28PERSONA%29.docx" />
+    <Content Include="Template\MANDATO ESPECIAL %282%29.docx" />
+    <Content Include="Template\MANDATO ESPECIAL CORREO %28EMPRESA%29.docx" />
+    <Content Include="Template\MANDATO ESPECIAL CORREO %28PERSONA%29.docx" />
+    <Content Include="Template\MANDATO ESPECIAL PLURAL %282%29.docx" />
+    <Content Include="Template\MANDATO ESPECIAL SINGULAR %282%29.docx" />
+    <None Include="Template\MANDATO.docx" />
+    <None Include="Template\MANDATO_P.docx" />
+    <Content Include="Template\MUTUO HIPOTECARIO %28EMPRESA%29.docx" />
+    <Content Include="Template\MUTUO_HIPOTECARIO.docx" />
+    <Content Include="Template\MUTUO_HIPOTECARIO_PN.docx" />
+    <Content Include="Template\PAGARE.docx" />
+    <Content Include="Template\PAGARE_old.docx" />
+    <Content Include="Template\PODER %28EMPRESA%29.docx" />
+    <Content Include="Template\PODER %28PERSONA%29.docx" />
+    <None Include="Template\PODER.docx" />
+    <None Include="Template\PODER_P.docx" />
+    <Content Include="Template\PRENDA_DESPLAZAMIENTO MODIFICADO.docx" />
+    <Content Include="Template\PRENDA_DESPLAZAMIENTO.doc" />
+    <Content Include="Template\PRENDA_DESPLAZAMIENTO.docx" />
+    <Content Include="Template\pruebaJE.docx" />
+    <Content Include="Template\PruebasPrestamo.docx" />
+    <Content Include="Template\TABLA.docx" />
+    <Content Include="Template\UAF %288%29.docx" />
+    <Content Include="Template\UAF DDC %28EMPRESA%29.docx" />
+    <Content Include="Template\UAF DDC %28PERSONA%29.docx" />
+    <Content Include="Template\UAF PEP %28EMPRESA 2 REP.%29.docx" />
+    <Content Include="Template\UAF PEP %28EMPRESA%29.docx" />
+    <Content Include="Template\UAF PEP %28PERSONA%29.docx" />
+    <None Include="Template\UAF.docx" />
+    <Content Include="Template\UAF_P %2836%29.docx" />
+    <Content Include="Template\UAF_P %2842%29.docx" />
+    <None Include="Template\UAF_P.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Clases.csproj">
+      <Project>{247BC96C-57D1-4E02-B2D7-A1453FD61BA0}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>60207</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

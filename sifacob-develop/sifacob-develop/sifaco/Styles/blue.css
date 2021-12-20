@@ -1,0 +1,199 @@
+/* iCheck plugin Square skin, blue
+----------------------------------- */
+.icheckbox_square-blue,
+.iradio_square-blue {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-blue {
+    background-position: 0 0;
+}
+    .icheckbox_square-blue.hover {
+        background-position: -24px 0;
+    }
+    .icheckbox_square-blue.checked {
+        background-position: -48px 0;
+    }
+    .icheckbox_square-blue.disabled {
+        background-position: -72px 0;
+        cursor: default;
+    }
+    .icheckbox_square-blue.checked.disabled {
+        background-position: -96px 0;
+    }
+
+.iradio_square-blue {
+    background-position: -120px 0;
+}
+    .iradio_square-blue.hover {
+        background-position: -144px 0;
+    }
+    .iradio_square-blue.checked {
+        background-position: -168px 0;
+    }
+    .iradio_square-blue.disabled {
+        background-position: -192px 0;
+        cursor: default;
+    }
+    .iradio_square-blue.checked.disabled {
+        background-position: -216px 0;
+    }
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min-device-pixel-ratio: 1.5) {
+    .icheckbox_square-blue,
+    .iradio_square-blue {
+        background-image: url(blue@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}
+
+/* Bloc image backgrounds */
+
+.bloc {
+    width: 100%;
+    clear: both;
+    background: 50% 50% no-repeat;
+    padding: 0 50px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+.bg-img-bkg {
+    background-image: url("img/img_bkg.jpg") !important;
+}
+
+.bgc-white {
+    background-color: #ffffff;
+}
+
+.log {
+    padding-bottom: 20px;
+}
+
+.bloc-fill-screen > .container {
+    position: relative;
+    top: 50%;
+    /*transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);*/
+    padding-bottom:3rem;
+}
+
+.log-izq {
+    width: 749px;
+    overflow: visible;
+    float: none;
+}
+
+.row-no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.row-no-gutters > [class^="col-"], .row.row-no-gutters > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.bgc-charcoal {
+    background-color: #2C3E59;
+}
+
+.d-bloc {
+    color: rgba(255,255,255,.7);
+}
+
+
+
+.bloc-fill-screen {
+    padding-top: 3rem;
+    position: relative;
+    /*height: 86vh;*/
+}
+
+
+@media (max-width: 749px) {
+    .log-izq {
+        width: 100%;
+    }
+}
+
+
+#bloc-0 h3 {
+    font-size: 18px;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, p, label, .btn, a {
+    font-family: "Helvetica";
+}
+
+#bloc-1 h3 {
+    /*font-family: Barlow-Regular;*/
+    font-size: 16px;
+}
+
+.mg-md2 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+
+.mg-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left
+}
+
+
+.mg-md3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.bloc .container {
+    padding-left: 0;
+    padding-right: 0;
+    align-content: center;
+}
+
+.bloc-sm {
+    padding: 1.8rem 50px;
+}
+
+.btn-cerulean-blue:hover {
+    background: #333992 !important;
+    color: #FFFFFF !important;
+}
+
+.btn-cerulean-blue {
+    background: #4047B6;
+    color: #FFFFFF !important;
+}
+
+.voffset {
+    margin-top: 2.2rem;
+}
+
+.d-bloc .panel, .l-bloc {
+    color: rgba(0,0,0,.5);
+}
