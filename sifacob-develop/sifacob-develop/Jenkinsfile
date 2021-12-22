@@ -12,5 +12,10 @@ pipeline {
     					    bat "\"${tool 'MSBUild'}\" sifacob-develop/sifacob-develop/SIFACO.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot"
     					}
 				}
+				stage('Deploy') {
+    					steps {
+    					    bat "\"${tool 'MSBUild'}\" sifacob-develop/sifacob-develop/SIFACO.sln /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot"
+    					}
+				}
 			}
 }
