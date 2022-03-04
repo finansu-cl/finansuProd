@@ -152,7 +152,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <h3 class="mg-md bloc-mob-center-text ">
-                                ©2020 by William Sumar
+                                ©2020
                             </h3>
                         </div>
                         <div class="col-sm-3">
