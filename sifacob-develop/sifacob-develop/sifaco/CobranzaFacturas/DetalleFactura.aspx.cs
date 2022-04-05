@@ -20,6 +20,13 @@ namespace sifaco.CobranzaFacturas
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["menu"] = "6";
+
+            if (!IsPostBack)
+            {
+                txtFechaD.Text = DateTime.Now.AddDays(-5).ToShortDateString();
+                txtFechaH.Text = DateTime.Now.ToShortDateString();
+            }
+
             if (Request.QueryString["fid"] != null && Request.QueryString["val"] != null && Request.QueryString["val2"] != null && Request.QueryString["edo"] != null)
             {
                 if (!IsPostBack)
@@ -41,7 +48,7 @@ namespace sifaco.CobranzaFacturas
                     Request.QueryString.Clear();
                 }
             }
-            else 
+            else
             {
                 if (Request.QueryString["fid"] != null && Request.QueryString["flg"] != null && Request.QueryString["obser"] != null && Request.QueryString["fecha"] == null)
                 {
@@ -101,7 +108,7 @@ namespace sifaco.CobranzaFacturas
                             Request.QueryString.Clear();
                         }
                     }
-                    else if(Request.QueryString["edo"].ToString() == "33")
+                    else if (Request.QueryString["edo"].ToString() == "33")
                     {
                         if (!IsPostBack)
                         {
@@ -159,8 +166,8 @@ namespace sifaco.CobranzaFacturas
                 string conn = ConfigurationManager.ConnectionStrings["dbConnect"].ConnectionString;
                 string spName = "usr_fnns.SP_SEL_CLIENTES_FACTURAS";
                 Dictionary<string, string> parametros = new Dictionary<string, string>();
-                parametros.Add("@ID", idCliente);
                 ArrayList tipoDatos = new ArrayList();
+                parametros.Add("@ID", idCliente);
                 tipoDatos.Add("int");
                 SqlDataAdapter reader = cls.GetConnectionToDb(conn, spName, parametros, tipoDatos);
                 return reader;
@@ -197,13 +204,24 @@ namespace sifaco.CobranzaFacturas
         {
             try
             {
+                DateTime fechaD = Convert.ToDateTime("1753-01-01 00:00:00"); ;
+                DateTime fechaH = Convert.ToDateTime("9999-12-31 23:59:59.997");
+                if (txtFechaD.Text != "")
+                    fechaD = Convert.ToDateTime(txtFechaD.Text);
+                if (txtFechaH.Text != "")
+                    fechaH = Convert.ToDateTime(txtFechaH.Text + " 23:59:59.997");
+
                 Common cls = new Common();
                 string conn = ConfigurationManager.ConnectionStrings["dbConnect"].ConnectionString;
                 string spName = "usr_fnns.SP_SEL_FACTURAS_CLIENTES";
                 Dictionary<string, string> parametros = new Dictionary<string, string>();
-                parametros.Add("@ID_CLIENTE", idCliente);
                 ArrayList tipoDatos = new ArrayList();
+                parametros.Add("@ID_CLIENTE", idCliente);
                 tipoDatos.Add("int");
+                parametros.Add("@FECHA_DESDE", fechaD.ToString());
+                tipoDatos.Add("datetime");
+                parametros.Add("@FECHA_HASTA", fechaH.ToString());
+                tipoDatos.Add("datetime");
                 SqlDataAdapter reader = cls.GetConnectionToDb(conn, spName, parametros, tipoDatos);
                 return reader;
             }
@@ -257,13 +275,13 @@ namespace sifaco.CobranzaFacturas
             return re;
         }
 
-        public string FacturasPorCliente(string idCliente) 
+        public string FacturasPorCliente(string idCliente)
         {
             string fechaE = "";
             SqlDataAdapter adapter = GetAdapterFacturas(idCliente);
             List<Facturas> facturas = GetFacturas(adapter);
             StringBuilder filas = new StringBuilder();
-            foreach (var fac in facturas) 
+            foreach (var fac in facturas)
             {
 
                 string sel1 = "";
@@ -320,7 +338,7 @@ namespace sifaco.CobranzaFacturas
                 filas.Append("</td>");
                 filas.Append("<td>");
                 filas.Append(fac.Deudor.ToString());
-                filas.Append(" ("+fac.RutDeudor.ToString()+")");
+                filas.Append(" (" + fac.RutDeudor.ToString() + ")");
                 filas.Append("</td>");
                 filas.Append("<td>$");
                 filas.Append(fac.Plazo.ToString());
@@ -361,13 +379,13 @@ namespace sifaco.CobranzaFacturas
                     filas.Append("<option " + sel7 + " value='5' style='background:violet;color:white;'>PAGADO SIN INTERESES DE MORA</option>");
                 if (Session["rol"] != null && Session["rol"].ToString() == "admin" || (fac.IdEdoFactura != 3 && fac.IdEdoFactura != 7))
                     filas.Append("<option " + sel8 + " value='6' style='background:blue;color:white;'>EN JUICIO</option>");
-                if (Session["rol"] != null && Session["rol"].ToString() == "admin" || (fac.IdEdoFactura != 3 && fac.IdEdoFactura != 6 ))
+                if (Session["rol"] != null && Session["rol"].ToString() == "admin" || (fac.IdEdoFactura != 3 && fac.IdEdoFactura != 6))
                     filas.Append("<option " + sel9 + " value='7' style='background:gray;color:black;'>INCOBRABLE</option>");
                 filas.Append("</select>");
 
                 filas.Append("<input type='text' id='datePick" + fac.ID + "' style='display:none;'/><br><input type='button' id='btnGuar" + fac.ID + "' value='Guardar' style='display:none;'/>");
                 filas.Append("<input onKeyPress='return soloNum(event, this.id)' onblur='formatomiles(this.id);' type='text' id='pagoParcial" + fac.ID + "' style='display:none;'/><br><input type='text' id='datePick3" + fac.ID + "' style='display:none;'/><br><input type='button' id='btnGuarP" + fac.ID + "' value='Guardar' style='display:none;'/>");
-                if(fac.IdEdoFactura == 4)
+                if (fac.IdEdoFactura == 4)
                     filas.Append("<a id='pP" + fac.ID + "' style='cursor:pointer;color:black;font-weight:bold;'>" + fac.MontoParcial.ToString("N") + "</a>");
                 filas.Append("</td>");
                 filas.Append("<td><span id='mas4" + fac.ID + "'>");
@@ -385,11 +403,11 @@ namespace sifaco.CobranzaFacturas
                         sel5 = "selected='selected'";
                         break;
                 }
-                if(fac.Emision == null)
+                if (fac.Emision == null)
                     fechaE = string.Format("{0:dd/MM/yyyy}", "9999-12-31");
                 else
                     fechaE = string.Format("{0:dd/MM/yyyy}", fac.Emision);
-                
+
                 //filas.Append("<select id='ddlN" + fac.ID + "'><option " + sel4 + " value='1'>SI</option><option " + sel5 + " value='2'>NO</option></select>");
                 //filas.Append("<input type='text' id='datePick2" + fac.ID + "' value='" + fechaE + "'/><br><input type='button' id='btnGuar2" + fac.ID + "' value='Guardar' />");
                 filas.Append(fechaE);
@@ -440,7 +458,7 @@ namespace sifaco.CobranzaFacturas
                 filas.Append("</td>");
 
                 filas.Append("</tr>");
-                
+
             }
             return filas.ToString();
         }
@@ -538,7 +556,7 @@ namespace sifaco.CobranzaFacturas
                         parametros.Add("@FECHA_PAGO", Convert.ToDateTime(fechaPago).ToString());
                         tipoDatos.Add("datetime");
                     }
-                    else if (valEdo == "4") 
+                    else if (valEdo == "4")
                     {
                         parametros.Add("@ID_EDO_FACTURA", valEdo);
                         tipoDatos.Add("int");
@@ -688,7 +706,7 @@ namespace sifaco.CobranzaFacturas
                 cls.LogFile(m, logFile, ex);
             }
         }
-        
+
         public void EditarValorMoraManual(string id, string montoMora)
         {
             try
@@ -718,6 +736,16 @@ namespace sifaco.CobranzaFacturas
                 logFile = HttpContext.Current.Server.MapPath(logFile);
                 Common cls = new Common();
                 cls.LogFile(m, logFile, ex);
+            }
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (Request.QueryString["cid"] != null)
+            {
+                SqlDataAdapter adapter = GetAdapterClientes(Request.QueryString["cid"].ToString());
+                rptClienteFactura.DataSource = GetClientes(adapter);
+                rptClienteFactura.DataBind();
             }
         }
     }
