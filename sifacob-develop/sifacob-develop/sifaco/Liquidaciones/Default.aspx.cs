@@ -20,7 +20,7 @@ namespace sifaco.Liquidaciones
             Session["menu"] = "21";
             if (!IsPostBack)
             {
-                ReadExcel();
+                //ReadExcel();
                 SqlDataAdapter adapter = GetAdapter();
                 rptGrid.DataSource = GetLiquidados(adapter); 
                 rptGrid.DataBind();
@@ -128,7 +128,10 @@ namespace sifaco.Liquidaciones
                     {
                         var row1Col0 = dr[4];
                         if (row1Col0.ToString() != "RUT")
+                        {
+                            System.Diagnostics.Debug.WriteLine("Si entra" + row1Col0.ToString());
                             GetAdapterNonQuery(row1Col0.ToString());
+                        }
                     }
                 }
             }
