@@ -116,7 +116,7 @@ namespace sifaco.Liquidaciones
         public void ReadExcel()
         {
             GetAdapterNonQueryTruncate();
-            string xsl = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Server.MapPath("../App_Data/Files/registro_diario.xls") + ";" + @"Extended Properties='Excel 8.0;HDR=Yes;'";
+            string xsl = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + HttpContext.Current.Server.MapPath("../App_Data/Files/registro_diario.xls") + ";" + @"Extended Properties='Excel 8.0;HDR=Yes;'";
             //string xsl = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=G:\FerozoWebHosting\finansu-sifacob.com\public_html\finansu\Boletin\registro_diario.xls;" + @"Extended Properties='Excel 8.0;HDR=Yes;'";
             using (OleDbConnection connection = new OleDbConnection(xsl))
             {
