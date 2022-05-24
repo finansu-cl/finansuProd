@@ -70,6 +70,9 @@
 
     $(document).ready(function () {
 
+        $('#btnPrestamoReorganizado').prop('disabled', true);
+
+
        calc();
 
 	  $('#Form1').on('keyup keypress', function(e) {

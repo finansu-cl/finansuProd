@@ -1715,6 +1715,7 @@ namespace sifaco.Prestamo
 
         protected void btnPrestamoReorganizado_Click(object sender, EventArgs e)
         {
+            /*
             if (Request.QueryString["cid"] != null && Request.QueryString["pid"] != null)
             {
                 string idCliente = Request.QueryString["cid"].ToString();
@@ -1724,6 +1725,7 @@ namespace sifaco.Prestamo
                 Response.Redirect("../Prestamo/?cid=" + idCliente + "&pid=" + idPres.ToString());
 
             }
+            */
         }
 
         public SqlDataAdapter GetAdapterDocumentos(string funcionalidad)
