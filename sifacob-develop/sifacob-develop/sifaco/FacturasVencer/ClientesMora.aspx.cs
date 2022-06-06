@@ -500,8 +500,8 @@ namespace sifaco.FacturasVencer
                 filas.Append("</td>");
                 filas.Append("<td style='color:black;' align='center'>");
 
-                filas.Append("<select id='ddl" + fac.ID + "' style='width:110px;'><option value='-1' style='color:black;'>-- Seleccione --</option><option " + sel1 + " value='1'>PAGADA</option><option " + sel2 + " value='2'>NO PAGADA</option><option " + sel3 + " value='3'>PAGO PARCIAL</option></select>");
-                filas.Append("<input type='text' id='datePick" + fac.ID + "' style='display:none;'/><br><input type='button' id='btnGuar" + fac.ID + "' value='Guardar' style='display:none;'/>");
+                filas.Append("<select class='disabled-guest' id='ddl" + fac.ID + "' style='width:110px;'><option value='-1' style='color:black;'>-- Seleccione --</option><option " + sel1 + " value='1'>PAGADA</option><option " + sel2 + " value='2'>NO PAGADA</option><option " + sel3 + " value='3'>PAGO PARCIAL</option></select>");
+                filas.Append("<input class='disabled-guest' type='text' id='datePick" + fac.ID + "' style='display:none;'/><br><input class='disabled-guest' type='button' id='btnGuar" + fac.ID + "' value='Guardar' style='display:none;'/>");
                 //filas.Append("<input onKeyPress='return soloNum(event, this.id)' onblur='formatomiles(this.id);' type='text' id='pagoParcial" + fac.ID + "' style='display:none;'/><br><input type='button' id='btnGuarP" + fac.ID + "' value='Guardar' style='display:none;'/>");
                 //if (fac.IdEdoFactura == 4)
                 //    filas.Append("<a id='pP" + fac.ID + "' style='cursor:pointer;color:black;font-weight:bold;'>" + fac.MontoParcial.ToString("N") + "</a>");
@@ -521,9 +521,9 @@ namespace sifaco.FacturasVencer
                 filas.Append("});");
                 filas.Append("});</script>");
                 filas.Append("</td>");
-                filas.Append("<td style='color:Black;'><textarea id='txtObser" + fac.ID + "' rows='5' cols='20'>");
+                filas.Append("<td style='color:Black;'><textarea class='disabled-guest' id='txtObser" + fac.ID + "' rows='5' cols='20'>");
                 filas.Append(fac.Observacion);
-                filas.Append("</textarea><input type='button' id='btnSaveObser" + fac.ID + "' value='Guardar'/></td>");
+                filas.Append("</textarea><input class='disabled-guest' type='button' id='btnSaveObser" + fac.ID + "' value='Guardar'/></td>");
                 filas.Append("</tr>");
                 //filas.Append("<script type='text/javascript'>MiClick('#vc_" + count.ToString() + "','#dc_" + count.ToString() + "');</script>");
 

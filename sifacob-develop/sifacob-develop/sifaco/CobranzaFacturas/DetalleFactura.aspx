@@ -164,6 +164,19 @@
         });
 
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ('<%=Session["rol"].ToString()%>' == "guest") {
+                $('.disabled-guest').prop('disabled', true);
+                $('.disabled-guest').attr('disabled', true);
+                $('.disabled-guest').click(function () { return false; });
+            }
+
+        });
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentHeaderSection" runat="server">
     <section class="content-header">

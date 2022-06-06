@@ -88,6 +88,17 @@ namespace sifaco.Controls
             txtCuota.Attributes.Add("onKeyPress", "return soloNum(event, this.id)");
             txtCuota.Attributes.Add("onblur", "formatomiles(this.id);");
             txtCuota.Attributes.Add("readonly", "readonly");
+
+            if(Session["rol"].ToString() == "guest")
+            {
+                txtMonto.Attributes.Add("readonly", "readonly");
+                txtPlazo.Attributes.Add("readonly", "readonly");
+                txtNumCuotas.Attributes.Add("readonly", "readonly");
+                txtTasa.Attributes.Add("readonly", "readonly");
+                txtMGracia.Attributes.Add("readonly", "readonly");
+                txtFecPres.Attributes.Add("readonly", "readonly");
+            }
+
             if (!IsPostBack) 
             {
 

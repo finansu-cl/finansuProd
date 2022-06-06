@@ -21,6 +21,7 @@
                         <asp:ListItem Value="admin">Admin</asp:ListItem>
                         <asp:ListItem Value="user">User</asp:ListItem>
                         <asp:ListItem Value="analista">Analista</asp:ListItem>
+                        <asp:ListItem Value="guest">Invitado</asp:ListItem>
                       </asp:DropDownList>
                   </div>
                 </div>

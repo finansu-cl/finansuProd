@@ -49,7 +49,12 @@ namespace sifaco.Controls
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["rol"].ToString() == "guest")
+            {
+                txtNombre.Attributes.Add("readonly", "readonly");
+                ddlFunc.Attributes.Add("readonly", "readonly");
+                fuContrato.Attributes.Add("disabled", "disabled");
+            }
         }
 
     }

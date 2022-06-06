@@ -395,7 +395,7 @@ namespace sifaco.FacturasVencer
                 filas.Append(string.Format("{0:dd-MM-yyyy}", fac.Vencimiento));
                 filas.Append("</td>");
                 filas.Append("<td style='color:black;' align='center'>");
-                filas.Append("<select id='ddl" + fac.ID + "' style='width:110px;'><option value='1' " + sel1 + ">SI</option><option " + sel2 + " value='2'>NO</option></select>");
+                filas.Append("<select class='disabled-guest' id='ddl" + fac.ID + "' style='width:110px;'><option value='1' " + sel1 + ">SI</option><option " + sel2 + " value='2'>NO</option></select>");
                 filas.Append("<script type='text/javascript'>$(document).ready(function () {");
                 filas.Append("$('#ddl" + fac.ID + "').change(function () {");
                 //filas.Append("SaveValueDev(" + fac.ID + ",$('#ddl" + fac.ID + "').val(),true);");

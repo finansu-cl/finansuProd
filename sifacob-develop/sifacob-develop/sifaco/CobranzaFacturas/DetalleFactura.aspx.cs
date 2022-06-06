@@ -364,7 +364,7 @@ namespace sifaco.CobranzaFacturas
                 filas.Append("</td>");
                 filas.Append("<td style='color:black;' align='center'>");
 
-                filas.Append("<select id='ddl" + fac.ID + "' style='width:110px;'>");
+                filas.Append("<select class='disabled-guest' id='ddl" + fac.ID + "' style='width:110px;'>");
                 if (Session["rol"] != null && Session["rol"].ToString() == "admin" || fac.IdEdoFactura == 1)
                     filas.Append("<option " + sel1 + " value='1' style='color:black;'>SIN VENCER</option>");
                 if (Session["rol"] != null && Session["rol"].ToString() == "admin" ||
@@ -391,7 +391,7 @@ namespace sifaco.CobranzaFacturas
                 filas.Append("<td><span id='mas4" + fac.ID + "'>");
                 filas.Append((fac.Pago == null && fac.FechaPagoParcial == null) ? "NA" : (fac.Pago != null) ? string.Format("{0:dd/MM/yyyy}", fac.Pago) : string.Format("{0:dd/MM/yyyy}", fac.FechaPagoParcial));
                 filas.Append("</span>");
-                filas.Append("<input type='text' id='datePick4" + fac.ID + "' style='display:none;color:black;'/><br><input type='button' id='btnGuar4" + fac.ID + "' value='Guardar Fecha' style='display:none;color:black;'/>");
+                filas.Append("<input class='disabled-guest' type='text' id='datePick4" + fac.ID + "' style='display:none;color:black;'/><br><input class='disabled-guest' type='button' id='btnGuar4" + fac.ID + "' value='Guardar Fecha' style='display:none;color:black;'/>");
                 filas.Append("</td>");
                 filas.Append("<td style='color:white;'>");
                 switch (fac.Notificacion)
@@ -412,9 +412,9 @@ namespace sifaco.CobranzaFacturas
                 //filas.Append("<input type='text' id='datePick2" + fac.ID + "' value='" + fechaE + "'/><br><input type='button' id='btnGuar2" + fac.ID + "' value='Guardar' />");
                 filas.Append(fechaE);
                 filas.Append("</td>");
-                filas.Append("<td style='color:Black;'><textarea id='txtObser" + fac.ID + "' rows='5' cols='20'>");
+                filas.Append("<td style='color:Black;'><textarea class='disabled-guest' id='txtObser" + fac.ID + "' rows='5' cols='20'>");
                 filas.Append(fac.Observacion);
-                filas.Append("</textarea><input type='button' id='btnSaveObser" + fac.ID + "' value='Guardar'/>");
+                filas.Append("</textarea><input class='disabled-guest' type='button' id='btnSaveObser" + fac.ID + "' value='Guardar'/>");
                 filas.Append("<script type='text/javascript'>$(document).ready(function () {");
                 filas.Append("$(function () {$('#datePick" + fac.ID + "').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });$('#datePick" + fac.ID + "').inputmask(); });");
                 filas.Append("$(function () {$('#datePick2" + fac.ID + "').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });$('#datePick2" + fac.ID + "').inputmask(); });");
